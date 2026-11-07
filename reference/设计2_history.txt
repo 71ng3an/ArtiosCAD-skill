@@ -1,0 +1,86 @@
+RDefaults\Bridging\Artios\Folding Carton\Folding Carton - Metric - bridging formula='
+DnDefaults\Single design parameter sets\Artios\Folding Carton\Folding Carton - Metric - Single design parametersS
+ASIZE 6.096*#m
+DSIZE 18.288*#m
+TSIZE 6.096*#m
+GRAIN 2
+con cen INTER((:,0.2),(:,0.1),LEFT) radius (25.63*#I) type 34 CP ITEMREF (:S:U:C1,1)
+con from INTER((:,0.1),(:,0.2),LEFT) at (ang(start((:,0.1)), end((:,0.1))) + (-(25))) type 34 ITEMREF (:S:U:C1,2)
+to INTER((:,0.1),(:S:U:C1,1),LEFT) ITEMREF (:S:U:U1,1) type 1 poi 2
+to INTER((:S:U:C1,2),(:S:U:C1,1),LEFT) ITEMREF (:S:U:U1,2) type 1 poi 2
+to START(:S:U:U1,1) ITEMREF (:S:U:U1,3) type 1 poi 2
+con from START(:S:U:U1,1) at (ang(start((:S:U:U1,1)), end((:S:U:U1,1))) + (-(22.5))) type 34 ITEMREF (:S:U:C1,3)
+del (:S:U:U1,3) group
+del (:S:U:C1,2) group
+del (:S:U:U1,2) group
+to INTER((:S:U:C1,3),(:S:U:C1,1),LEFT) ITEMREF (:S:U:U1,2) type 1 poi 2
+to END(:S:U:U1,1) ITEMREF (:S:U:U1,3) type 1 poi 2
+con from START(:S:U:U1,2) at (ang(start((:S:U:U1,1)), end((:S:U:U1,1))) + (-(11.25))) type 34 ITEMREF (:S:U:C1,4)
+con cen END(:S:U:U1,1) radius (13.06*#I) type 34 CP ITEMREF (:S:U:C1,5)
+to INTER((:S:U:C1,4),(:S:U:C1,5),LEFT) ITEMREF (:S:U:U1,4) type 1 poi 2
+con cen START(:S:U:U1,1) radius 47*#I type 34 CP ITEMREF (:S:U:C1,6)
+con cen START(:S:U:U1,2) radius (dist(END(:S:U:U1,4),START(:S:U:U1,2))) type 34 CP ITEMREF (:S:U:C1,7)
+del (:S:U:C1,6) group
+move to END(:S:U:U1,2)
+to INTER((:S:U:C1,3),(:S:U:C1,7),LEFT) ITEMREF (:S:U:U1,5) type 1 poi 2
+move to END(:S:U:U1,3)
+to INTER((:,0.1),(:S:U:C1,7),LEFT) ITEMREF (:S:U:U1,6) type 1 poi 2
+to END(:S:U:U1,4) ITEMREF (:S:U:U1,7) type 1 poi 2
+move to END(:S:U:U1,5)
+at (90+(45)) byx (-5.125*#I) ITEMREF (:S:U:U1,8) type 1 poi 2
+circle at 240.00-90 rad ((projlen(END(:S:U:U1,4), (#x,#y), 240.00)))/2 ITEMREF (:S:U:U1,9) type 1 poi 2
+SPLIT (:S:U:U1,8) POS START(:S:U:U1,9) itemref (:S:U:U1,10)
+SPLIT (:S:U:U1,8) POS END(:S:U:U1,8) itemref (:S:U:U1,11)
+SPLIT (:S:U:U1,4) POS END(:S:U:U1,7) itemref (:S:U:U1,12)
+SPLIT (:S:U:U1,8) POS START(:S:U:U1,9) itemref (:S:U:U1,13)
+SPLIT (:S:U:U1,4) POS END(:S:U:U1,4) itemref (:S:U:U1,14)
+SPLIT (:S:U:U1,8) POS END(:S:U:U1,8) itemref (:S:U:U1,15)
+SPLIT (:S:U:U1,4) POS END(:S:U:U1,4) itemref (:S:U:U1,16)
+SPLIT (:S:U:U1,7) POS MIDPT(:S:U:U1,16) itemref (:S:U:U1,17)
+SPLIT (:S:U:U1,9) POS END(:S:U:U1,4) itemref (:S:U:U1,18)
+del (:S:U:U1,18) group
+cha (:S:U:U1,4) lev 0 lines bezier to type 2
+copyd (:S:U:U1,1..9,12,14,16..17) item 1 CP
+trans (:S:U:U1,1..9,12,14,16..17) group about START(:S:U:U1,2) rot (-(22.5)) HORIZ
+trans (:S:U:U1,1..9,12,14,16..17)  group from START(:S:U:U1,2) pos START(:S:U:U1,2)
+copyd (:S:U:U1,1..9,12,14,16..17) item 2 CP
+trans (:S:U:U1,1..9,12,14,16..17) group about START(:S:U:U1,1) rot (22.5) HORIZ
+paste 3 ITEMREF (:S:U:U1,18)
+copyd (:S:U:U1,1..9,12,14,16..18) item 4 CP
+copyd (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..9,12,14,16..17) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) item 6 CP
+trans (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..9,12,14,16..17) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) group about START(:S:U:U1,1) rot (-(22.5)) HORIZ
+paste 6 ITEMREF (:S:U:U1,19)
+cha (:S:U:U1:C19:LYR0C0:I2,3) (:S:U:U1:C19:LYR0C0:I7,3) lev 0 lines bezier to type 2
+cha (:S:U:U1:C19:LYR0C0:I2,2) (:S:U:U1:C19:LYR0C0:I7,2) lev 0 lines bezier to type 2
+cha (:S:U:U1,2) (:S:U:U1:C18:LYR0C0:I1,2) lev 0 lines bezier to type 2
+cha (:S:U:U1,3) (:S:U:U1:C18:LYR0C0:I1,3) lev 0 lines bezier to type 2
+copyd (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..17,19) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) item 7 CP
+trans (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..17,19) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) group about START(:S:U:U1,2) rot (-(45)) HORIZ
+paste 7 ITEMREF (:S:U:U1,20)
+cha (:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I2,4) (:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I7,4) lev 0 lines bezier to type 2
+cha (:S:U:U1:C20:LYR0C0:I2,5) (:S:U:U1:C20:LYR0C0:I5,5) lev 0 lines bezier to type 2
+cha (:S:U:U1:C19:LYR0C0:I2,5) (:S:U:U1:C19:LYR0C0:I7,5) lev 0 lines bezier to type 2
+cha (:S:U:U1,5) (:S:U:U1:C18:LYR0C0:I1,5) lev 0 lines bezier to type 2
+trans (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..17,19..20) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) group about START(:S:U:U1,1) rot -90.00 HORIZ
+copyd (:,1,2) item 9 CP
+paste 9 ITEMREF (:S:U:U1,21)
+copyd (:S:U:U1:C21:LYR0C0:C18:LYR0C0,2..4) (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..17,19..20) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) (:S:U:U1:C21:LYR0C0,2..5,7..17,19..20) (:S:U:U1:C21:LYR0C0:C18:LYR0C0:I1,2..5,7..9) item 10 CP
+trans (:S:U:U1:C21:LYR0C0:C18:LYR0C0,2..4) (:S:U:U1:C18:LYR0C0,2..4) (:S:U:U1,2..5,7..17,19..20) (:S:U:U1:C18:LYR0C0:I1,2..5,7..9) (:S:U:U1:C21:LYR0C0,2..5,7..17,19..20) (:S:U:U1:C21:LYR0C0:C18:LYR0C0:I1,2..5,7..9) group about START(:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I2,1) rot angle(START(:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I2,1),(START(:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I3,1)))-ang(START(:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I2,1), START(:S:U:U1,8)) HORIZ
+paste 10 ITEMREF (:S:U:U1,22)
+move to START(:S:U:U1,2)
+at (90+(7.5)) byy (15.1875*#I) ITEMREF (:S:U:U1,23) type 1 poi 2
+to END(:S:U:U1,1) ITEMREF (:S:U:U1,24) type 1 poi 2
+copyd (:S:U:U1,22) item 11 CP
+trans (:S:U:U1,22) group about START(:S:U:U1:C22:LYR0C0:I3,2) rot (-(90)) HORIZ
+paste 11 ITEMREF (:S:U:U1,25)
+del (:S:U:U1,22) group
+cha (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I3,1) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I6,1) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I8,1) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I11,1) lev 0 lines bezier to type 1
+cha (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I3,4) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I6,4) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I8,4) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I11,4) lev 0 lines bezier to type 1
+cha (:S:U:U1,1) (:S:U:U1:C18:LYR0C0:I1,1) (:S:U:U1:C21:LYR0C0,1) (:S:U:U1:C21:LYR0C0:C18:LYR0C0:I1,1) lev 0 lines bezier to type 2
+cha (:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I2,3) (:S:U:U1:C20:LYR0C0:I4:C19:LYR0C0:I7,3) (:S:U:U1:C21:LYR0C0:C20:LYR0C0:I4:C19:LYR0C0:I2,3) (:S:U:U1:C21:LYR0C0:C20:LYR0C0:I4:C19:LYR0C0:I7,3) lev 0 lines bezier to type 8
+cha (:S:U:U1:C20:LYR0C0:I2,4) (:S:U:U1:C20:LYR0C0:I5,4) (:S:U:U1:C21:LYR0C0:C20:LYR0C0:I2,3) (:S:U:U1:C21:LYR0C0:C20:LYR0C0:I5,3) lev 0 lines bezier to type 8
+cha (:S:U:U1:C19:LYR0C0:I2,4) (:S:U:U1:C19:LYR0C0:I7,4) (:S:U:U1:C21:LYR0C0:C19:LYR0C0:I2,3) (:S:U:U1:C21:LYR0C0:C19:LYR0C0:I7,3) lev 0 lines bezier to type 8
+cha (:S:U:U1,4) (:S:U:U1:C18:LYR0C0:I1,4) (:S:U:U1:C21:LYR0C0,4) (:S:U:U1:C21:LYR0C0:C18:LYR0C0:I1,4) lev 0 lines bezier to type 8
+cha (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C20:LYR0C0:I4:C19:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C20:LYR0C0:I4:C19:LYR0C0:I7,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C20:LYR0C0:I4:C19:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C20:LYR0C0:I4:C19:LYR0C0:I7,3) lev 0 lines bezier to type 8
+cha (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I3,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C19:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C19:LYR0C0:I7,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C20:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I5:C20:LYR0C0:I5,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I6,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I8,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C19:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C19:LYR0C0:I7,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C20:LYR0C0:I2,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I10:C20:LYR0C0:I5,3) (:S:U:U1:C25:LYR0C0:C22:LYR0C0:I11,3) lev 0 lines bezier to type 8
+cha (:S:U:U1,1) (:S:U:U1:C18:LYR0C0:I1,1) (:S:U:U1:C21:LYR0C0,1) (:S:U:U1:C21:LYR0C0:C18:LYR0C0:I1,1) lev 0 lines bezier to type 2

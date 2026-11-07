@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+# portable Python / downloads / run outputs
+python/
+_downloads/
+out/
+work/
+# ArtiosCAD files embed the author's Windows user path; don't commit them
+*.ARD
+*.A3D
+*.ard
+*.a3d
+*.dxf
+*.png
+*.full.png
+*_report.json

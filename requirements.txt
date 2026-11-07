@@ -1,0 +1,4 @@
+ezdxf
+pywinauto
+pywin32
+pillow
